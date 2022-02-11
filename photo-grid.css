@@ -1,0 +1,23 @@
+.photo-grid {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* Set height of rows */
+    grid-auto-rows: 240px;
+}
+
+/* To avoid images shrinking down on mobile, use media query */
+/* Expanding images will shrink the others around it */
+@media screen and (min-width: 600px) {
+    /* Makes item span two rows ( START / END) */
+    /* can also do something like 1 / 4. span starts from whereever and auto ends wherever after 2 rows */
+    .card-tall {
+        grid-row: span 2 / auto;
+    }
+    
+    /* same as above but for columns */
+    .card-wide {
+        grid-column: span 2 / auto;
+    }
+}

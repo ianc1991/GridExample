@@ -1,0 +1,19 @@
+.basic-grid {
+    display: grid;
+    gap: 1rem;
+
+    /* 1. Define an explicit grid, with columns defined in advance. This often has way too much code  */
+    /* 1fr equals all of the available space. An additional 1fr is 50%. Etc.  */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; */
+
+    /* 2. Better template than above, but items are still small */
+    /* grid-template-columns: repeat(12, 1fr); */
+
+    /* 3. Causes items to be minimum 240px, no larger than 1fr, but causes overflow on X axis. */
+    /* grid-template-columns: repeat(12, minmax(240px, 1fr)); */
+
+    /* 4. auto-fit makes columns reponsive and line breaks at overflow */
+    /* Implicit grid doesn't specify how many columns, only counts items */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+}
